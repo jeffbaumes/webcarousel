@@ -20,6 +20,9 @@
                 padding-top: 50px;
                 padding-bottom: 20px;
             }
+            .wc-frame {
+                border: 0;
+            }
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
@@ -43,6 +46,8 @@
         </div>
         <div class="navbar-collapse collapse">
           <div class="navbar-form navbar-right">
+            <button id="prev" class="btn btn-success">Previous</button>
+            <button id="next" class="btn btn-success">Next</button>
             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
               Configure
             </button>
@@ -51,22 +56,7 @@
       </div>
     </div>
 
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-1">
-            <button id="prev" class="btn btn-success">Previous</button>
-        </div>
-        <div class="col-md-10" style="height:100%">
-            <iframe style="height:100%;width:100%" class="wc-frame"></iframe>
-       </div>
-        <div class="col-md-1">
-            <button id="next" class="btn btn-success">Next</button>
-        </div>
-      </div>
-
-    </div>
-
+    <iframe style="height:100%;width:100%" class="wc-frame"></iframe>
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
