@@ -48,6 +48,7 @@
           <div class="navbar-form navbar-right">
             <button id="prev" class="btn btn-success">Previous</button>
             <button id="next" class="btn btn-success">Next</button>
+            <button id="pause" class="btn btn-success btn-warning">Pause</button>
             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
               Configure
             </button>
@@ -56,7 +57,7 @@
       </div>
     </div>
 
-    <iframe style="height:100%;width:100%" class="wc-frame"></iframe>
+    <iframe style="height:100%;width:100%" id="wc-frame"></iframe>
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

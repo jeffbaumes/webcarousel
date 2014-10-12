@@ -1,7 +1,7 @@
 $(function () {
     var data = localStorage.webcarousel ? JSON.parse(localStorage.webcarousel) : undefined,
         index = 0,
-        $frame = $('.wc-frame'),
+        $frame = $('#wc-frame'),
         curTimeout = undefined;
 
     if (!data || !data.sites || !data.delaySeconds) {
@@ -24,12 +24,15 @@ $(function () {
             index = 0;
         }
         console.log(data.sites[index]);
+        $frame.css('height', $('body').height());
         $frame.attr('src', data.sites[index]);
         index += 1;
         if (curTimeout) {
             clearTimeout(curTimeout);
         }
-        curTimeout = setTimeout(showNext, data.delaySeconds * 1000);
+        if ($('#pause').text() === 'Pause') {
+            curTimeout = setTimeout(showNext, data.delaySeconds * 1000);
+        }
     }
 
     $('#prev').click(function () {
@@ -48,7 +51,18 @@ $(function () {
         showNext();
     });
 
+    $('#pause').click(function () {
+        if ($('#pause').text() === 'Pause') {
+            if (curTimeout) {
+                clearTimeout(curTimeout);
+            }
+            $('#pause').text('Play');
+        } else {
+            showNext();
+            $('#pause').text('Pause');
+        }
+    });
+
     showNext();
     $('#myModal').modal({show: false});
-    $frame.css('height', $('body').height());
 });
