@@ -13,10 +13,23 @@ $(function () {
     }
 
     console.log(JSON.stringify(data, null, 4));
-    $('#settings').text(JSON.stringify(data, null, 4));
+
+    $('#seconds').val('' + data.delaySeconds);
+
+    data.sites.forEach(function (d, i) {
+        $('#page' + (i + 1)).val(d);
+    });
+
     $('#save').click(function () {
-        data = JSON.parse($('#settings').val());
-        localStorage.webcarousel = $('#settings').val();
+        var i;
+        data.delaySeconds = +$('#seconds').val();
+        data.sites = [];
+        for (i = 1; i <= 10; ++i) {
+            if ($('#page' + i).val().trim() !== '') {
+                data.sites.push($('#page' + i).val().trim());
+            }
+        }
+        localStorage.webcarousel = JSON.stringify(data);
     });
 
     function showNext() {
