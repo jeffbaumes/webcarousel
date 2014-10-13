@@ -30,7 +30,7 @@ $(function () {
             }
         }
         localStorage.webcarousel = JSON.stringify(data);
-        $('#myModal').modal({show: false});
+        $('#myModal').modal('hide');
     });
 
     function showNext() {
