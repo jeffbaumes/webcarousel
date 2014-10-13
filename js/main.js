@@ -79,4 +79,5 @@ $(function () {
 
     showNext();
     $('#myModal').modal({show: false});
+    $('#infoModal').modal({show: false});
 });
