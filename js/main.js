@@ -7,7 +7,7 @@ $(function () {
     if (!data || !data.sites || !data.delaySeconds) {
         data = {
             delaySeconds: 5,
-            sites: ['http://www.kitware.com']
+            sites: ['http://www.wunderground.com/q/zmw:12201.1.99999', 'http://www.timeanddate.com/countdown/to?iso=20150101T00&p0=12&msg=Countdown+until+New+Year%27s+2015']
         };
         localStorage.webcarousel = JSON.stringify(data);
     }
