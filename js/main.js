@@ -24,12 +24,13 @@ $(function () {
         var i;
         data.delaySeconds = +$('#seconds').val();
         data.sites = [];
-        for (i = 1; i <= 10; ++i) {
+        for (i = 1; i <= 8; ++i) {
             if ($('#page' + i).val().trim() !== '') {
                 data.sites.push($('#page' + i).val().trim());
             }
         }
         localStorage.webcarousel = JSON.stringify(data);
+        $('#myModal').modal({show: false});
     });
 
     function showNext() {
@@ -71,8 +72,8 @@ $(function () {
             }
             $('#pause').text('Play');
         } else {
-            showNext();
             $('#pause').text('Pause');
+            showNext();
         }
     });
 
